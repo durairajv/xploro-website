@@ -250,7 +250,7 @@ export const clients = [
   },
   {
     name: "Sukino Healthcare",
-    logo: "/logos/sukino.png",
+    logo: "/logos/sukino_logo.png",
     industry: "Healthcare",
   },
   {
