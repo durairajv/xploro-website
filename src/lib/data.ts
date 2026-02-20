@@ -220,32 +220,32 @@ export const industries = [
 export const clients = [
   {
     name: "Mercedes-Benz",
-    logo: "/logos/mercedes-benz.png",
+    logo: "/logos/mercedes_benz.png",
     industry: "Automotive",
   },
   {
     name: "CaratLane",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686d421b35eead70ec188d43_Logo-Carat-lane.png",
+    logo: "/logos/caratlane.png",
     industry: "Jewellery",
   },
   {
     name: "Titan",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ed2484daa8c7210a8aac5_Untitled%20design%20(2).png",
+    logo: "/logos/titan.png",
     industry: "Lifestyle",
   },
   {
     name: "Jos Alukkas",
-    logo: "/logos/jos-alukkas.png",
+    logo: "/logos/jos_alukkas.png",
     industry: "Jewellery",
   },
   {
     name: "Metro Brands",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ed24357226841ee477868_Untitled%20design%20(3).png",
+    logo: "/logos/metro.png",
     industry: "Retail",
   },
   {
     name: "Mia by Tanishq",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/6872116ed5a705d6ac87c483_e505448e-6c5d-4066-b802-40011bdee06b.png",
+    logo: "/logos/mia_by_tanishq.png",
     industry: "Jewellery",
   },
   {
@@ -255,17 +255,17 @@ export const clients = [
   },
   {
     name: "Prince Jewellery",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ea4293cbacdffaf651ea9_prince-logo.png",
+    logo: "/logos/prince_jewellery.png",
     industry: "Jewellery",
   },
   {
     name: "Landmark Group",
-    logo: "/logos/landmark-group.png",
+    logo: "/logos/landmark_group.png",
     industry: "Retail",
   },
   {
     name: "The Souled Store",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686e9dddab4e39e4a14de55e_the-souled-store.webp",
+    logo: "/logos/the_souled_store.png",
     industry: "Retail & Fashion",
   },
   {
@@ -275,7 +275,7 @@ export const clients = [
   },
   {
     name: "Zeon Charging",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686e83d30831d25e9bee0316_evpedia-icon-0015.svg",
+    logo: "/logos/zeon_charging.png",
     industry: "EV & Energy",
   },
   {
@@ -285,12 +285,12 @@ export const clients = [
   },
   {
     name: "Wondr Diamonds",
-    logo: "/logos/wondr-diamonds.png",
+    logo: "/logos/wondr_diamonds.png",
     industry: "Jewellery",
   },
   {
     name: "Sangeetha Mobiles",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ea2a686042de084948ad0_Xploro_pitch_website.pptx%20(10).png",
+    logo: "/logos/sangeetha.png",
     industry: "Electronics",
   },
   {
@@ -300,7 +300,7 @@ export const clients = [
   },
   {
     name: "Indian Silk House",
-    logo: "/logos/indian-silk-house.png",
+    logo: "/logos/indian_silk_house_agencies.png",
     industry: "Fashion",
   },
 ] as const;

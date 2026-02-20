@@ -22,6 +22,7 @@ const outputs = [
   { name: "Insights Dashboard", desc: "Real-time analytics & trends", color: "#8B5CF6" },
   { name: "Auto-Response Agent", desc: "AI replies in your brand voice", color: "#E84C8A" },
   { name: "Smart Ticketing", desc: "Route, escalate & track SLAs", color: "#10B981" },
+  { name: "Spam Filtering", desc: "40% noise auto-removed", color: "#EF4444" },
   { name: "Human Review", desc: "Approve AI drafts (HITL)", color: "#06B6D4" },
   { name: "Marketing Agent", desc: "Campaign recommendations", color: "#F59E0B" },
   { name: "Lead & Sales Agent", desc: "Lead scoring & forwarding", color: "#3B82F6" },
@@ -141,7 +142,18 @@ function OutputIcon({ index, cx, cy, r }: { index: number; cx: number; cy: numbe
           <line x1={cx + s * 0.05} y1={cy + s * 0.2} x2={cx + s * 0.5} y2={cy + s * 0.2} stroke="white" strokeWidth="1" strokeLinecap="round" />
         </g>
       );
-    case 3: // Human Review — person check
+    case 3: // Spam Filtering — shield with X
+      return (
+        <g>
+          <path
+            d={`M${cx} ${cy - s * 0.85} L${cx + s * 0.7} ${cy - s * 0.45} L${cx + s * 0.7} ${cy + s * 0.15} Q${cx + s * 0.7} ${cy + s * 0.85} ${cx} ${cy + s * 0.95} Q${cx - s * 0.7} ${cy + s * 0.85} ${cx - s * 0.7} ${cy + s * 0.15} L${cx - s * 0.7} ${cy - s * 0.45} Z`}
+            fill="none" stroke="white" strokeWidth="1.2" strokeLinejoin="round"
+          />
+          <line x1={cx - s * 0.3} y1={cy - s * 0.2} x2={cx + s * 0.3} y2={cy + s * 0.3} stroke="white" strokeWidth="1.3" strokeLinecap="round" />
+          <line x1={cx + s * 0.3} y1={cy - s * 0.2} x2={cx - s * 0.3} y2={cy + s * 0.3} stroke="white" strokeWidth="1.3" strokeLinecap="round" />
+        </g>
+      );
+    case 4: // Human Review — person check
       return (
         <g>
           <circle cx={cx - s * 0.15} cy={cy - s * 0.4} r={s * 0.35} fill="none" stroke="white" strokeWidth="1.2" />
@@ -151,14 +163,14 @@ function OutputIcon({ index, cx, cy, r }: { index: number; cx: number; cy: numbe
             fill="none" stroke="white" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
         </g>
       );
-    case 4: // Marketing — megaphone
+    case 5: // Marketing — megaphone
       return (
         <g transform={`translate(${cx},${cy})`}>
           <path d={`M${-s * 0.7} ${-s * 0.15} L${-s * 0.3} ${-s * 0.15} L${s * 0.6} ${-s * 0.6} L${s * 0.6} ${s * 0.6} L${-s * 0.3} ${s * 0.15} L${-s * 0.7} ${s * 0.15} Z`}
             fill="none" stroke="white" strokeWidth="1.2" strokeLinejoin="round" />
         </g>
       );
-    case 5: // Lead & Sales — target
+    case 6: // Lead & Sales — target
       return (
         <g>
           <circle cx={cx} cy={cy} r={s * 0.8} fill="none" stroke="white" strokeWidth="1.1" />
@@ -188,14 +200,15 @@ const channelPositions = [
 const hubX = 560;
 const hubY = 350;
 
-/* SVG coordinates for output cards (right side) — 6 cards spread across 700px */
+/* SVG coordinates for output cards (right side) — 7 cards spread across 700px */
 const outputPositions = [
-  { x: 940, y: 40 },
-  { x: 940, y: 146 },
-  { x: 940, y: 252 },
-  { x: 940, y: 358 },
-  { x: 940, y: 464 },
-  { x: 940, y: 570 },
+  { x: 940, y: 20 },
+  { x: 940, y: 115 },
+  { x: 940, y: 210 },
+  { x: 940, y: 305 },
+  { x: 940, y: 400 },
+  { x: 940, y: 495 },
+  { x: 940, y: 590 },
 ];
 
 /* Bezier paths: channel right-edge -> hub left-edge */
@@ -229,12 +242,13 @@ function getOutputPath(idx: number): string {
   const endY = op.y + 25;
 
   const curves = [
-    `M ${startX} ${startY} C ${startX + 80} ${startY - 35}, ${endX - 120} ${endY + 25}, ${endX} ${endY}`,
-    `M ${startX} ${startY} C ${startX + 100} ${startY - 20}, ${endX - 100} ${endY + 15}, ${endX} ${endY}`,
-    `M ${startX} ${startY} C ${startX + 110} ${startY - 8}, ${endX - 90} ${endY + 5}, ${endX} ${endY}`,
-    `M ${startX} ${startY} C ${startX + 120} ${startY + 5}, ${endX - 80} ${endY - 5}, ${endX} ${endY}`,
-    `M ${startX} ${startY} C ${startX + 100} ${startY + 18}, ${endX - 100} ${endY - 12}, ${endX} ${endY}`,
-    `M ${startX} ${startY} C ${startX + 80} ${startY + 35}, ${endX - 120} ${endY - 25}, ${endX} ${endY}`,
+    `M ${startX} ${startY} C ${startX + 80} ${startY - 40}, ${endX - 120} ${endY + 30}, ${endX} ${endY}`,
+    `M ${startX} ${startY} C ${startX + 90} ${startY - 28}, ${endX - 110} ${endY + 20}, ${endX} ${endY}`,
+    `M ${startX} ${startY} C ${startX + 100} ${startY - 15}, ${endX - 100} ${endY + 10}, ${endX} ${endY}`,
+    `M ${startX} ${startY} C ${startX + 110} ${startY - 2}, ${endX - 90} ${endY + 2}, ${endX} ${endY}`,
+    `M ${startX} ${startY} C ${startX + 100} ${startY + 12}, ${endX - 100} ${endY - 8}, ${endX} ${endY}`,
+    `M ${startX} ${startY} C ${startX + 90} ${startY + 25}, ${endX - 110} ${endY - 18}, ${endX} ${endY}`,
+    `M ${startX} ${startY} C ${startX + 80} ${startY + 40}, ${endX - 120} ${endY - 30}, ${endX} ${endY}`,
   ];
   return curves[idx];
 }
