@@ -27,6 +27,7 @@ import {
   LayoutGrid,
   Store,
   MapPin,
+  ScanSearch,
 } from "lucide-react";
 import { LogoWhite } from "@/components/logo";
 import { Counter } from "@/components/counter";
@@ -144,6 +145,15 @@ const agents = [
     icon: Shield,
     color: "#F59E0B",
     badge: null,
+  },
+  {
+    name: "Sentinel",
+    tagline: "40% noise. Zero distractions.",
+    description:
+      "Automatically identifies and filters spam, fake reviews, bot messages, and irrelevant noise across all channels. Your team only sees what matters — saving hours daily.",
+    icon: ScanSearch,
+    color: "#EF4444",
+    badge: "40% Savings",
   },
 ];
 
@@ -562,7 +572,7 @@ export default function Home() {
           </AnimatedSection>
 
           <StaggerContainer
-            className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5"
+            className="grid md:grid-cols-2 lg:grid-cols-3 gap-5"
             staggerDelay={0.08}
           >
             {agents.map((agent) => {
