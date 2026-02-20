@@ -219,9 +219,49 @@ export const industries = [
 
 export const clients = [
   {
-    name: "Arise Health",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/68721008dd17df7b00d1518b_20230908170508%20(1).svg",
+    name: "Mercedes-Benz",
+    logo: "/logos/mercedes-benz.png",
+    industry: "Automotive",
+  },
+  {
+    name: "CaratLane",
+    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686d421b35eead70ec188d43_Logo-Carat-lane.png",
+    industry: "Jewellery",
+  },
+  {
+    name: "Titan",
+    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ed2484daa8c7210a8aac5_Untitled%20design%20(2).png",
+    industry: "Lifestyle",
+  },
+  {
+    name: "Jos Alukkas",
+    logo: "/logos/jos-alukkas.png",
+    industry: "Jewellery",
+  },
+  {
+    name: "Metro Brands",
+    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ed24357226841ee477868_Untitled%20design%20(3).png",
+    industry: "Retail",
+  },
+  {
+    name: "Mia by Tanishq",
+    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/6872116ed5a705d6ac87c483_e505448e-6c5d-4066-b802-40011bdee06b.png",
+    industry: "Jewellery",
+  },
+  {
+    name: "Sukino Healthcare",
+    logo: "/logos/sukino.png",
     industry: "Healthcare",
+  },
+  {
+    name: "Prince Jewellery",
+    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ea4293cbacdffaf651ea9_prince-logo.png",
+    industry: "Jewellery",
+  },
+  {
+    name: "Landmark Group",
+    logo: "/logos/landmark-group.png",
+    industry: "Retail",
   },
   {
     name: "The Souled Store",
@@ -229,39 +269,39 @@ export const clients = [
     industry: "Retail & Fashion",
   },
   {
-    name: "Prince",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ea4293cbacdffaf651ea9_prince-logo.png",
-    industry: "Retail",
+    name: "Shaya",
+    logo: "/logos/shaya.png",
+    industry: "Jewellery",
   },
   {
-    name: "Zeon Charging Network",
+    name: "Zeon Charging",
     logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686e83d30831d25e9bee0316_evpedia-icon-0015.svg",
     industry: "EV & Energy",
   },
   {
-    name: "Client 5",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ed24357226841ee477868_Untitled%20design%20(3).png",
-    industry: "Enterprise",
+    name: "Zivame",
+    logo: "/logos/zivame.png",
+    industry: "Fashion",
   },
   {
-    name: "Client 6",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/6872116ed5a705d6ac87c483_e505448e-6c5d-4066-b802-40011bdee06b.png",
-    industry: "Technology",
+    name: "Wondr Diamonds",
+    logo: "/logos/wondr-diamonds.png",
+    industry: "Jewellery",
   },
   {
-    name: "Client 7",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ed2484daa8c7210a8aac5_Untitled%20design%20(2).png",
-    industry: "Hospitality",
-  },
-  {
-    name: "Client 8",
-    logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ed24b16fc1601b28b3b77_Untitled%20design%20(1).png",
-    industry: "Food & Beverage",
-  },
-  {
-    name: "Client 9",
+    name: "Sangeetha Mobiles",
     logo: "https://cdn.prod.website-files.com/686d086599ee65617e088c6d/686ea2a686042de084948ad0_Xploro_pitch_website.pptx%20(10).png",
-    industry: "Services",
+    industry: "Electronics",
+  },
+  {
+    name: "Taneira",
+    logo: "/logos/taneira.png",
+    industry: "Fashion",
+  },
+  {
+    name: "Indian Silk House",
+    logo: "/logos/indian-silk-house.png",
+    industry: "Fashion",
   },
 ] as const;
 

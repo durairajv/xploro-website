@@ -44,7 +44,7 @@ import { clients, clientTestimonials, industries } from "@/lib/data";
 const heroStats = [
   { value: "14", suffix: "+", label: "Channels" },
   { value: "80", suffix: "M+", label: "Signals Processed" },
-  { value: "50", suffix: "+", label: "Brands Trust Us" },
+  { value: "25", suffix: "+", label: "Brands Trust Us" },
   { value: "40", suffix: "%", label: "CSAT Improvement" },
 ];
 
@@ -297,8 +297,8 @@ export default function Home() {
                         <Mic className="w-4 h-4 text-white" strokeWidth={2} />
                       </div>
                       <div>
-                        <p className="text-text-primary font-semibold text-sm leading-tight">Voice Intelligence</p>
-                        <p className="text-[9px] text-text-muted">AI-Powered Speech Analytics</p>
+                        <p className="text-text-primary font-semibold text-base leading-tight">Voice Intelligence</p>
+                        <p className="text-[10px] text-text-muted">AI-Powered Speech Analytics</p>
                       </div>
                     </div>
 
@@ -313,16 +313,16 @@ export default function Home() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-400" />
                           </span>
-                          <span className="text-purple-400 text-[7px] font-semibold tracking-[0.15em] uppercase">Recording</span>
+                          <span className="text-purple-400 text-[8px] font-semibold tracking-[0.15em] uppercase">Recording</span>
                         </div>
-                        <p className="text-text-primary font-medium text-[11px]">Call Center</p>
+                        <p className="text-text-primary font-medium text-xs">Call Center</p>
                       </div>
                       <div className="flex items-end gap-[2px] h-3.5">
                         {[0.35, 0.65, 1, 0.5, 0.85, 0.4, 0.75, 0.3].map((h, i) => (
                           <div key={i} className="w-[1.5px] rounded-full bg-purple-300 wave-bar" style={{ height: `${h * 100}%`, animationDelay: `${i * 0.08}s` }} />
                         ))}
                       </div>
-                      <p className="text-xs font-bold text-purple-600">92%</p>
+                      <p className="text-sm font-bold text-purple-600">92%</p>
                     </div>
 
                     {/* In-Store row */}
@@ -336,19 +336,19 @@ export default function Home() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                             <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-400" />
                           </span>
-                          <span className="text-teal-400 text-[7px] font-semibold tracking-[0.15em] uppercase">Ambient</span>
+                          <span className="text-teal-400 text-[8px] font-semibold tracking-[0.15em] uppercase">Ambient</span>
                         </div>
-                        <p className="text-text-primary font-medium text-[11px]">In-Store</p>
+                        <p className="text-text-primary font-medium text-xs">In-Store</p>
                       </div>
                       <div className="flex items-end gap-[2px] h-3.5">
                         {[0.3, 0.55, 0.85, 0.45, 0.75, 0.35, 0.65, 0.25].map((h, i) => (
                           <div key={i} className="w-[1.5px] rounded-full bg-teal-300 wave-bar" style={{ height: `${h * 100}%`, animationDelay: `${i * 0.1}s` }} />
                         ))}
                       </div>
-                      <p className="text-xs font-bold text-teal-600">247</p>
+                      <p className="text-sm font-bold text-teal-600">247</p>
                     </div>
 
-                    <div className="flex items-center justify-center gap-1 mt-1 text-[9px] text-text-muted group-hover:text-brand-500 transition-colors">
+                    <div className="flex items-center justify-center gap-1 mt-1 text-[10px] text-text-muted group-hover:text-brand-500 transition-colors">
                       <span>Explore Voice Analytics</span>
                       <ChevronRight className="w-3 h-3" />
                     </div>
@@ -363,8 +363,8 @@ export default function Home() {
                         <MapPin className="w-4 h-4 text-white" strokeWidth={2} />
                       </div>
                       <div>
-                        <p className="text-text-primary font-semibold text-sm leading-tight">GMB Management</p>
-                        <p className="text-[9px] text-text-muted">Google Business Profile</p>
+                        <p className="text-text-primary font-semibold text-base leading-tight">GMB Management</p>
+                        <p className="text-[10px] text-text-muted">Google Business Profile</p>
                       </div>
                     </div>
 
@@ -373,19 +373,19 @@ export default function Home() {
                         <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center">
                           <Star className="w-3 h-3 text-blue-500" />
                         </div>
-                        <span className="text-[11px] text-text-secondary">Review management & response</span>
+                        <span className="text-xs text-text-secondary">Review management & response</span>
                       </div>
                       <div className="flex items-center gap-2.5">
                         <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center">
                           <BarChart3 className="w-3 h-3 text-blue-500" />
                         </div>
-                        <span className="text-[11px] text-text-secondary">Insights & local SEO analytics</span>
+                        <span className="text-xs text-text-secondary">Insights & local SEO analytics</span>
                       </div>
                       <div className="flex items-center gap-2.5">
                         <div className="w-6 h-6 rounded-md bg-blue-50 flex items-center justify-center">
                           <Check className="w-3 h-3 text-blue-500" />
                         </div>
-                        <span className="text-[11px] text-text-secondary">Location verification at scale</span>
+                        <span className="text-xs text-text-secondary">Location verification at scale</span>
                       </div>
                     </div>
 
@@ -395,7 +395,7 @@ export default function Home() {
                           <div key={i} className="w-5 h-5 rounded-full border-2 border-white" style={{ backgroundColor: c }} />
                         ))}
                       </div>
-                      <span className="text-[10px] text-text-muted font-medium">800+ locations managed</span>
+                      <span className="text-[11px] text-text-muted font-medium">800+ locations managed</span>
                     </div>
                   </div>
                 </div>
@@ -470,7 +470,8 @@ export default function Home() {
                   key={`${client.name}-${i}`}
                   className="flex-shrink-0 h-12 w-40 relative opacity-60 hover:opacity-100 transition-opacity duration-300"
                 >
-                  <Image src={client.logo} alt={client.name} fill className="object-contain" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={client.logo} alt={client.name} className="h-full w-full object-contain" />
                 </div>
               ))}
             </div>

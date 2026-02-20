@@ -359,7 +359,7 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
                 x={pos.x + 50}
                 y={pos.y + (ch.highlight ? 22 : 30)}
                 fill="#18181B"
-                fontSize="13.5"
+                fontSize="14.5"
                 fontWeight="600"
                 fontFamily="Inter, system-ui, sans-serif"
               >
@@ -371,7 +371,7 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
                     x={pos.x + 50}
                     y={pos.y + 40}
                     fill={ch.color}
-                    fontSize="9.5"
+                    fontSize="10.5"
                     fontWeight="700"
                     fontFamily="Inter, system-ui, sans-serif"
                     letterSpacing="0.5"
@@ -410,7 +410,7 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
           y="678"
           textAnchor="middle"
           fill="#A1A1AA"
-          fontSize="11.5"
+          fontSize="12.5"
           fontFamily="Inter, system-ui, sans-serif"
         >
           + Play Store, App Store, YouTube, Zomato, TripAdvisor
@@ -463,7 +463,7 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
             y={hubY + 32}
             textAnchor="middle"
             fill="#E84C8A"
-            fontSize="10"
+            fontSize="11.5"
             fontWeight="600"
             fontFamily="Inter, system-ui, sans-serif"
             letterSpacing="0.8"
@@ -495,7 +495,7 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
                 x={pos.x + 50}
                 y={pos.y + 21}
                 fill="#18181B"
-                fontSize="13"
+                fontSize="14.5"
                 fontWeight="600"
                 fontFamily="Inter, system-ui, sans-serif"
               >
@@ -505,7 +505,7 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
                 x={pos.x + 50}
                 y={pos.y + 38}
                 fill="#71717A"
-                fontSize="10.5"
+                fontSize="11.5"
                 fontFamily="Inter, system-ui, sans-serif"
               >
                 {out.desc}
