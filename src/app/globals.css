@@ -156,7 +156,10 @@ body {
 .animate-spin-slow { animation: spin-slow 30s linear infinite; }
 .animate-bounce-subtle { animation: bounce-subtle 2s ease-in-out infinite; }
 .animate-glow-pulse { animation: glow-pulse 3s ease-in-out infinite; }
-.animate-marquee { animation: marquee 35s linear infinite; }
+.animate-marquee { animation: marquee 25s linear infinite; }
+@media (min-width: 641px) {
+  .animate-marquee { animation: marquee 35s linear infinite; }
+}
 .animate-glow-ring { animation: glow-ring 3s ease-in-out infinite; }
 .animate-badge-glow { animation: badge-glow 4s ease-in-out infinite; }
 
@@ -235,6 +238,23 @@ body {
   100% { transform: translateX(-50%); }
 }
 .animate-flow-wave { animation: flow-wave 6s linear infinite; }
+
+/* ─── Custom scrollbar ─── */
+/* ─── Mobile-specific tweaks ─── */
+@media (max-width: 640px) {
+  .animate-fade-in-up { animation-duration: 0.5s; }
+  .animate-slide-left { animation-duration: 0.4s; }
+  .animate-slide-right { animation-duration: 0.4s; }
+}
+
+@media (hover: none) {
+  .group:active { transform: scale(0.98); transition: transform 0.1s; }
+}
+
+/* ─── Safe area support ─── */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
 
 /* ─── Custom scrollbar ─── */
 ::-webkit-scrollbar {

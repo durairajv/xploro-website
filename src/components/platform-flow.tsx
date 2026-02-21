@@ -541,14 +541,14 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <section ref={ref} className="py-24 md:py-32 overflow-hidden bg-white">
+    <section ref={ref} className="py-12 md:py-24 lg:py-32 overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
           <p className="text-brand-500 text-sm font-semibold tracking-wider uppercase mb-3">
             How It Works
@@ -592,7 +592,7 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
 
         {/* ─── Mobile Flow (< lg) ─── */}
         <div className="lg:hidden">
-          <div className="space-y-4">
+          <div className="space-y-2">
             {/* Channels */}
             <div className="grid grid-cols-2 gap-2">
               {channels.map((ch, i) => (
@@ -628,42 +628,126 @@ export function PlatformFlow({ compact = false }: { compact?: boolean }) {
             </div>
             <p className="text-center text-[10px] text-text-muted">+ 5 more channels</p>
 
-            {/* Arrow */}
-            <div className="flex justify-center py-2">
-              <div className="w-px h-12 bg-gradient-to-b from-zinc-300 to-brand-300 relative">
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-500 rounded-full" />
-              </div>
+            {/* Convergence SVG: 9 colored streams merging to center */}
+            <div className="px-2">
+              <svg viewBox="0 0 300 80" className="w-full" preserveAspectRatio="xMidYMid meet">
+                {channels.map((ch, i) => {
+                  const startX = 10 + (i * 280 / 8);
+                  const path = `M ${startX} 0 C ${startX} 32, 150 52, 150 80`;
+                  return (
+                    <g key={`conv-${i}`}>
+                      <path d={path} fill="none" stroke={ch.color} strokeWidth="1.2" opacity="0.3" />
+                      {[0, 1].map((j) => (
+                        <circle key={j} r="3" fill={ch.color} opacity="0">
+                          <animateMotion
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin={`${i * 0.2 + j * 1}s`}
+                            path={path}
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0;0.9;0.9;0"
+                            keyTimes="0;0.1;0.85;1"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin={`${i * 0.2 + j * 1}s`}
+                          />
+                        </circle>
+                      ))}
+                    </g>
+                  );
+                })}
+                {/* Convergence point pulse */}
+                <circle cx="150" cy="80" r="4" fill="#E84C8A" opacity="0.2">
+                  <animate attributeName="r" values="3;7;3" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.4;0.15" dur="2s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="150" cy="80" r="2" fill="#E84C8A" opacity="0.6" />
+              </svg>
             </div>
 
-            {/* Hub */}
+            {/* Hub with glow ring + channel-colored orbiting dots */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="bg-white border-2 border-brand-500/20 rounded-2xl p-5 text-center shadow-md shadow-brand-500/5"
+              className="relative"
             >
-              <div className="w-14 h-8 mx-auto mb-2 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center overflow-hidden px-2 py-1">
-                <Image src="/logo-white.png" alt="Xploro" width={48} height={24} className="w-auto h-full object-contain" />
+              {/* Orbiting micro-dots with channel colors */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="relative w-44 h-44 animate-spin-slow">
+                  {channels.map((ch, i) => (
+                    <div
+                      key={`orbit-${i}`}
+                      className="absolute w-1.5 h-1.5 rounded-full"
+                      style={{
+                        top: "50%",
+                        left: "50%",
+                        transform: `rotate(${i * 40}deg) translateY(-80px) rotate(-${i * 40}deg)`,
+                        backgroundColor: ch.color,
+                        opacity: 0.4,
+                      }}
+                    />
+                  ))}
+                </div>
               </div>
-              <h3 className="text-base font-bold text-text-primary">Xploro CX Intelligence</h3>
-              <p className="text-xs text-text-muted mt-0.5">Ingest &bull; Understand &bull; Act</p>
+              <div className="bg-white border-2 border-brand-500/20 rounded-2xl p-5 text-center shadow-lg shadow-brand-500/10 animate-glow-ring">
+                <div className="w-16 h-9 mx-auto mb-2 rounded-lg bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center overflow-hidden px-2 py-1">
+                  <Image src="/logo-white.png" alt="Xploro" width={56} height={28} className="w-auto h-full object-contain" />
+                </div>
+                <h3 className="text-base font-bold text-text-primary">Xploro CX Intelligence</h3>
+                <p className="text-xs text-text-muted mt-0.5">Ingest &bull; Understand &bull; Act</p>
+              </div>
             </motion.div>
 
-            {/* Arrow */}
-            <div className="flex justify-center py-2">
-              <div className="w-px h-12 bg-gradient-to-b from-brand-300 to-zinc-300 relative">
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2 h-2 bg-brand-500 rounded-full" />
-              </div>
+            {/* Fan-out SVG: center to 7 output positions */}
+            <div className="px-2">
+              <svg viewBox="0 0 300 80" className="w-full" preserveAspectRatio="xMidYMid meet">
+                {/* Source point pulse */}
+                <circle cx="150" cy="0" r="4" fill="#E84C8A" opacity="0.2">
+                  <animate attributeName="r" values="3;7;3" dur="2s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.15;0.4;0.15" dur="2s" repeatCount="indefinite" />
+                </circle>
+                <circle cx="150" cy="0" r="2" fill="#E84C8A" opacity="0.6" />
+                {outputs.map((out, i) => {
+                  const endX = 10 + (i * 280 / 6);
+                  const path = `M 150 0 C 150 28, ${endX} 48, ${endX} 80`;
+                  return (
+                    <g key={`fan-${i}`}>
+                      <path d={path} fill="none" stroke={out.color} strokeWidth="1.2" opacity="0.3" />
+                      {[0, 1].map((j) => (
+                        <circle key={j} r="3" fill={out.color} opacity="0">
+                          <animateMotion
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin={`${0.3 + i * 0.2 + j * 1}s`}
+                            path={path}
+                          />
+                          <animate
+                            attributeName="opacity"
+                            values="0;0.9;0.9;0"
+                            keyTimes="0;0.1;0.85;1"
+                            dur="2s"
+                            repeatCount="indefinite"
+                            begin={`${0.3 + i * 0.2 + j * 1}s`}
+                          />
+                        </circle>
+                      ))}
+                    </g>
+                  );
+                })}
+              </svg>
             </div>
 
-            {/* Outputs */}
+            {/* Outputs — alternating x slide-in */}
             <div className="space-y-2">
               {outputs.map((out, i) => (
                 <motion.div
                   key={out.name}
-                  initial={{ opacity: 0, y: 12 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ duration: 0.3, delay: 0.5 + i * 0.06 }}
+                  initial={{ opacity: 0, x: i % 2 === 0 ? -20 : 20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.5 + i * 0.08 }}
                   className="flex items-center gap-3 bg-white border border-zinc-300 rounded-xl px-4 py-3"
                 >
                   <div

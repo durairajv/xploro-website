@@ -107,15 +107,15 @@ export function DemoModal({ open, onClose }: DemoModalProps) {
         ) : (
           /* ── Form ── */
           <>
-            <div className="px-8 pt-8 pb-4">
+            <div className="px-5 sm:px-8 pt-6 sm:pt-8 pb-4">
               <h3 className="text-xl font-bold text-zinc-900 mb-1">Request a Demo</h3>
               <p className="text-sm text-zinc-500">
                 See how Xploro transforms your customer experience. We&apos;ll set up a personalized walkthrough.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="px-8 pb-8 space-y-4">
-              <div className="grid grid-cols-2 gap-4">
+            <form onSubmit={handleSubmit} className="px-5 sm:px-8 pb-8 space-y-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-zinc-700 mb-1.5">Full Name *</label>
                   <input
@@ -140,7 +140,7 @@ export function DemoModal({ open, onClose }: DemoModalProps) {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-xs font-medium text-zinc-700 mb-1.5">Company *</label>
                   <input
