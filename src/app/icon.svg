@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
   <rect width="32" height="32" rx="7" fill="#E84C8A"/>
   <!-- Down-pointing chevron -->
-  <path d="M4 5L16 17L28 5V11L16 23L4 11Z" fill="#fff"/>
+  <path d="M3 3L16 17L29 3L23 3L16 11L9 3Z" fill="#fff"/>
   <!-- Up-pointing chevron -->
-  <path d="M4 27L16 15L28 27V21L16 9L4 21Z" fill="#fff"/>
+  <path d="M3 29L16 15L29 29L23 29L16 21L9 29Z" fill="#fff"/>
 </svg>
